@@ -3,17 +3,19 @@ import static org.junit.Assert.*;
 
 import org.junit.*;
 
-import java.io.IndexOutOfBoundsException;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.ArrayList;
+
 
 public class MarkdownParseTest {
     @Test
-    public void addition() {
-        assertEquals(2, 1 + 1);
-    }
-    public void testIt() throws IndexOutOfBoundsException {
-        assertEquals(List.of("https://something.com", "some-page.html")),
-                MarkdownParse.getLinks(Files.readString(Path.of(("test.md"))));
+    public void testTestFile1() throws IOException {
+        System.out.println("test ran");
+        assertEquals(new ArrayList<String>(),
+                MarkdownParse.getLinks(Files.readString(Path.of(("test-file" +
+                        ".md")))));
+
     }
 }
